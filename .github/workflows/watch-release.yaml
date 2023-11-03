@@ -1,4 +1,4 @@
-name: whatch-releases
+name: watch-releases
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
