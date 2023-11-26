@@ -2,6 +2,9 @@
   outputs = inputs@{ self, nixpkgs, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
+        githubActions = inputs.nix-github-actions.lib.mkGithubMatrix {
+          checks = nixpkgs.lib.getAttrs [ "x86_64-linux" ] self.packages;
+        };
         overlays = {
           default = final: prev: import ./overlays final prev;
         };
@@ -28,4 +31,6 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.flake-parts.url = "github:hercules-ci/flake-parts";
   inputs.flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+  inputs.nix-github-actions.url = "github:nix-community/nix-github-actions";
+  inputs.nix-github-actions.inputs.nixpkgs.follows = "nixpkgs";
 }
