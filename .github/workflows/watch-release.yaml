@@ -10,6 +10,9 @@ jobs:
       matrix:
         project:
           - vc60er/deptree
+          - chmouel/kss
+          - chmouel/snazy
+          - openshift-pipelines/pipelines-as-code
     runs-on: ubuntu-latest
     if: github.repository_owner == 'vdemeester'
     steps:
