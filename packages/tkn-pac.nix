@@ -44,10 +44,14 @@ rec {
       };
     };
 
-  tkn-pac = tkn-pac_0_24;
+  tkn-pac = tkn-pac_0_25;
+  tkn-pac_0_25 = makeOverridable tknPacGen {
+    version = "0.25.0";
+    sha256 = "sha256-Y4Zms7Vn1UEZJ2aQrBZGbIFrdb+q7xXXqoy7SJgLkIo=";
+  };
   tkn-pac_0_24 = makeOverridable tknPacGen {
-    version = "0.24.0";
-    sha256 = "sha256-0Mt7/rZYybFnDY5dQU6s0V2rNoCs5A2s2j6VIETUq7E=";
+    version = "0.24.5";
+    sha256 = "sha256-DVmVpL/Djv+wysVyGtriesK8YxHn3sTA6EFFTtCOP0U=";
   };
   tkn-pac_0_23 = makeOverridable tknPacGen {
     version = "0.23.0";
