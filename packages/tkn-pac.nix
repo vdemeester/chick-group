@@ -45,13 +45,21 @@ rec {
     };
 
   tkn-pac = tkn-pac_0_25;
+  tkn-pac_0_27 = makeOverridable tknPacGen {
+    version = "0.27.0";
+    sha256 = "sha256-2Cwa+7993cU9gXgW6zB2iqRH32mKs1ysQ92YalFq7Vo=";
+  };
+  tkn-pac_0_26 = makeOverridable tknPacGen {
+    version = "0.26.0";
+    sha256 = "sha256-mw4KVqqB620iycw2B9MFEMJMuQhA2FOVo0vWoRenqKM=";
+  };
   tkn-pac_0_25 = makeOverridable tknPacGen {
     version = "0.25.0";
     sha256 = "sha256-Y4Zms7Vn1UEZJ2aQrBZGbIFrdb+q7xXXqoy7SJgLkIo=";
   };
   tkn-pac_0_24 = makeOverridable tknPacGen {
-    version = "0.24.5";
-    sha256 = "sha256-DVmVpL/Djv+wysVyGtriesK8YxHn3sTA6EFFTtCOP0U=";
+    version = "0.24.6";
+    sha256 = "sha256-p3ISVsaAsAFfnt0J+uzxttZ03X5CW/LiKQq0QGUiS7o=";
   };
   tkn-pac_0_23 = makeOverridable tknPacGen {
     version = "0.23.0";
