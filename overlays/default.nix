@@ -8,9 +8,5 @@ self: super:
     tkn-pac_0_26
     tkn-pac_0_25
     tkn-pac_0_24
-    tkn-pac_0_23
-    tkn-pac_0_22
-    tkn-pac_0_21
-    tkn-pac_0_20
     ;
 }
