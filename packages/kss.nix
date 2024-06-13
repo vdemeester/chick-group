@@ -3,14 +3,14 @@
 rec {
   kss = stdenv.mkDerivation rec {
     pname = "kss";
-    version = "0.2.1";
+    version = "0.4.0";
     name = "${pname}-${version}";
 
     src = fetchFromGitHub {
       owner = "chmouel";
       repo = "kss";
       rev = "${version}";
-      sha256 = "sha256-yFH/+5OnHsXl+Kg2DM7o25McOBC46cAPpjh5xZO1+rQ=";
+      sha256 = "sha256-xads3kMMuN4s2fgJDtint2XnCeVv83GQCxlxhO5Os1k=";
     };
     buildInputs = [ python3 ];
     installPhase = ''
