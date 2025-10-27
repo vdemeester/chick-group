@@ -1,4 +1,9 @@
-{ stdenv, lib, python3, fetchFromGitHub }:
+{ stdenv
+, lib
+, python3
+, fetchFromGitHub
+,
+}:
 
 rec {
   kss = stdenv.mkDerivation rec {
