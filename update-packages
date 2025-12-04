@@ -85,15 +85,6 @@ update_from_git() {
 
     if ./repos/update; then
         info "Successfully updated git-tracked packages"
-
-        # Check if there are changes to commit
-        if ! git diff --exit-code repos/ > /dev/null 2>&1; then
-            info "Changes detected in repos/, committing..."
-            git add repos/
-            git commit -m "Auto-update packages" -- repos/
-        else
-            info "No changes in git-tracked packages"
-        fi
         return 0
     else
         error "Failed to update git-tracked packages"
