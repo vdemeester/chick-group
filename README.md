@@ -6,29 +6,17 @@
 
 This repository provides the following packages:
 
-### startpaac
+<!-- BEGIN PACKAGE TABLE -->
 
-**Version:** 20251112.0
-**Source:** [chmouel/startpaac](https://github.com/chmouel/startpaac)
-**Description:** StartPAAC - All in one setup for Pipelines as Code on Kind
+| Package | Version | Description |
+|---------|---------|-------------|
+| [deptree](https://github.com/vc60er/deptree) | 20251114.0 | Dependency tree visualization tool |
+| [kss](https://github.com/chmouel/kss) | 0.4.0 | Kubernetes Secret Switcher |
+| [startpaac](https://github.com/chmouel/startpaac) | 20251117.0 | StartPAAC - All in one setup for Pipelines as Code on Kind |
 
-A tool that sets up a complete Pipelines as Code environment on a local Kind (Kubernetes in Docker) cluster.
+<!-- END PACKAGE TABLE -->
 
-### kss
-
-**Version:** 0.4.0
-**Source:** [chmouel/kss](https://github.com/chmouel/kss)
-**Description:** Kubernetes Secret Switcher
-
-A utility for managing and switching between Kubernetes secrets, with Zsh completion support.
-
-### deptree
-
-**Version:** 20251114.0
-**Source:** [vc60er/deptree](https://github.com/vc60er/deptree)
-**Description:** Dependency tree visualization tool
-
-A Go-based tool for visualizing and analyzing dependency trees.
+> **Note:** This table is automatically generated. Run `./generate-package-table` to update it.
 
 ## Installation
 
