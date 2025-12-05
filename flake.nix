@@ -1,10 +1,11 @@
 {
   outputs =
-    inputs@{ self
-    , nixpkgs
-    , flake-parts
-    , pre-commit-hooks
-    , ...
+    inputs@{
+      self,
+      nixpkgs,
+      flake-parts,
+      pre-commit-hooks,
+      ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
@@ -109,7 +110,8 @@
             pre-commit-check = pre-commit-hooks.lib.${system}.run {
               src = ./.;
               hooks = {
-                nixpkgs-fmt.enable = true;
+                deadnix.enable = true;
+                nixfmt-rfc-style.enable = true;
                 # nix-linter.enable = true;
                 # statix.enable = true;
 
