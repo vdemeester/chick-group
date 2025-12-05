@@ -5,18 +5,20 @@
 ,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "kss";
   version = "0.4.0";
 
   src = fetchFromGitHub {
     owner = "chmouel";
     repo = "kss";
-    rev = "${version}";
-    sha256 = "sha256-xads3kMMuN4s2fgJDtint2XnCeVv83GQCxlxhO5Os1k=";
+    rev = finalAttrs.version;
+    hash = "sha256-xads3kMMuN4s2fgJDtint2XnCeVv83GQCxlxhO5Os1k=";
   };
 
   buildInputs = [ python3 ];
+
+  dontBuild = true;
 
   installPhase = ''
     runHook preInstall
@@ -35,11 +37,15 @@ stdenv.mkDerivation rec {
     runHook postInstall
   '';
 
-  meta = with lib; {
+  postFixup = ''
+    patchShebangs $out/bin/kss
+  '';
+
+  meta = {
     description = "Kubernetes Secret Switcher";
-    homepage = "https://github.com/chmouel/kss";
-    license = licenses.asl20;
-    platforms = platforms.unix;
-    mainProgram = "kss";
+    homepage = "https://github.com/chmouel/${finalAttrs.pname}";
+    license = lib.licenses.asl20;
+    platforms = lib.platforms.unix;
+    mainProgram = finalAttrs.pname;
   };
-}
+})

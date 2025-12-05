@@ -1,8 +1,8 @@
 { lib
 , fetchFromGitHub
 , stdenv
-,
 }:
+
 let
   repoMeta = lib.importJSON ../repos/startpaac-main.json;
   fetcher =
@@ -11,9 +11,9 @@ let
     else
       throw "Unknown repository type ${repoMeta.type}";
 in
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "startpaac";
-  version = "${repoMeta.version}";
+  version = repoMeta.version;
 
   src = fetcher (
     builtins.removeAttrs repoMeta [
@@ -22,6 +22,8 @@ stdenv.mkDerivation rec {
       "vendorHash"
     ]
   );
+
+  dontBuild = true;
 
   installPhase = ''
     runHook preInstall
@@ -34,16 +36,19 @@ stdenv.mkDerivation rec {
     sed --in-place "s%^SP=.*$%SP=$out/share/startpaac%g" startpaac
 
     cp -v startpaac $out/bin
-    chmod +x $out/bin/startpaac
 
     runHook postInstall
   '';
 
-  meta = with lib; {
+  postFixup = ''
+    patchShebangs $out/bin/startpaac
+  '';
+
+  meta = {
     description = "StartPAAC - All in one setup for Pipelines as Code on Kind";
-    homepage = "https://github.com/chmouel/startpaac";
-    license = licenses.asl20;
-    platforms = platforms.unix;
-    mainProgram = "startpaac";
+    homepage = "https://github.com/chmouel/${finalAttrs.pname}";
+    license = lib.licenses.asl20;
+    platforms = lib.platforms.unix;
+    mainProgram = finalAttrs.pname;
   };
-}
+})
