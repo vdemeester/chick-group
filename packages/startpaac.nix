@@ -1,6 +1,7 @@
-{ lib
-, fetchFromGitHub
-, stdenv
+{
+  lib,
+  fetchFromGitHub,
+  stdenv,
 }:
 
 let
@@ -13,7 +14,7 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "startpaac";
-  version = repoMeta.version;
+  inherit (repoMeta) version;
 
   src = fetcher (
     builtins.removeAttrs repoMeta [

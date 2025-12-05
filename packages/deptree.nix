@@ -1,6 +1,7 @@
-{ lib
-, buildGoModule
-, fetchFromGitHub
+{
+  lib,
+  buildGoModule,
+  fetchFromGitHub,
 }:
 
 let
@@ -13,7 +14,7 @@ let
 in
 buildGoModule (finalAttrs: {
   pname = "deptree";
-  version = repoMeta.version;
+  inherit (repoMeta) version;
 
   src = fetcher (
     builtins.removeAttrs repoMeta [
