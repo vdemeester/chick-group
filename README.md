@@ -8,11 +8,11 @@ This repository provides the following packages:
 
 <!-- BEGIN PACKAGE TABLE -->
 
-| Package | Version | Description |
-|---------|---------|-------------|
-| [deptree](https://github.com/vc60er/deptree) | 20251114.0 | Dependency tree visualization tool |
-| [kss](https://github.com/chmouel/kss) | 0.4.0 | Kubernetes Secret Switcher |
-| [startpaac](https://github.com/chmouel/startpaac) | 20251117.0 | StartPAAC - All in one setup for Pipelines as Code on Kind |
+| Package | Version | Platforms |
+|---|---|---|
+| [`deptree`](https://github.com/vc60er/deptree) | `20251114.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`kss`](https://github.com/chmouel/kss) | `0.4.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`startpaac`](https://github.com/chmouel/startpaac) | `20251117.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 
 <!-- END PACKAGE TABLE -->
 
