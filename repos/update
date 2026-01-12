@@ -25,5 +25,5 @@ function update_github_repo() {
 
 
 update_github_repo vc60er deptree main
-update_github_repo chmouel startpaac main
+update_github_repo openshift-pipelines startpaac main
 
