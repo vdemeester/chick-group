@@ -7,12 +7,12 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "kss";
-  version = "0.4.0";
+  version = "1.2.0";
 
   src = fetchFromGitHub {
     owner = "chmouel";
     repo = "kss";
-    rev = finalAttrs.version;
+    rev = "v${finalAttrs.version}";
     hash = "sha256-xads3kMMuN4s2fgJDtint2XnCeVv83GQCxlxhO5Os1k=";
   };
 
