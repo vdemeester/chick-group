@@ -10,7 +10,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
         githubActions = inputs.nix-github-actions.lib.mkGithubMatrix {
-          checks = nixpkgs.lib.getAttrs [ "x86_64-linux" "x86_64-darwin" ] self.packages;
+          checks = nixpkgs.lib.getAttrs [ "x86_64-linux" "aarch64-darwin" ] self.packages;
         };
         overlays = {
           default = final: prev: import ./overlays final prev;
