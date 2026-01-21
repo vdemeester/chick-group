@@ -1,11 +1,10 @@
 {
-  stdenv,
   lib,
-  python3,
+  buildGoModule,
   fetchFromGitHub,
 }:
 
-stdenv.mkDerivation (finalAttrs: {
+buildGoModule (finalAttrs: {
   pname = "kss";
   version = "1.2.0";
 
@@ -13,39 +12,27 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "chmouel";
     repo = "kss";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-xads3kMMuN4s2fgJDtint2XnCeVv83GQCxlxhO5Os1k=";
+    hash = "sha256-P5FUYc8pxqDKsos2l1oQ8RpmStZleg2aU9r2NN/K9L4=";
   };
 
-  buildInputs = [ python3 ];
+  vendorHash = "sha256-HutPOas0oO3nvpW9+Thg89lYvknv4/KWucsKtwYVnhg=";
 
-  dontBuild = true;
+  ldflags = [
+    "-s"
+    "-w"
+  ];
 
-  installPhase = ''
-    runHook preInstall
-
-    substituteInPlace kss --replace \
-        "fileout.write(('#!/usr/bin/env %s\n' % env).encode('utf-8'))" \
-        "fileout.write(('#!%s/bin/%s\n' % (os.environ['python3'], env)).encode('utf-8'))"
-
-    mkdir -p $out/bin
-    cp kss $out/bin
-
-    # completions
-    mkdir -p $out/share/zsh/site-functions
-    cp _kss $out/share/zsh/site-functions/
-
-    runHook postInstall
-  '';
-
-  postFixup = ''
-    patchShebangs $out/bin/kss
-  '';
+  # Build both kss and tkss
+  subPackages = [
+    "cmd/kss"
+    "cmd/tkss"
+  ];
 
   meta = {
-    description = "Kubernetes Secret Switcher";
+    description = "Enhanced Kubernetes Pod Inspection tool with TUI dashboard";
     homepage = "https://github.com/chmouel/${finalAttrs.pname}";
     license = lib.licenses.asl20;
     platforms = lib.platforms.unix;
-    mainProgram = finalAttrs.pname;
+    mainProgram = "kss";
   };
 })
