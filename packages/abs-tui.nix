@@ -3,7 +3,7 @@
   rustPlatform,
   fetchFromGitHub,
   pkg-config,
-  mpv,
+  mpv-unwrapped,
   dbus,
   openssl,
   libsecret,
@@ -26,8 +26,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
     pkg-config
   ];
 
+  # Use mpv-unwrapped to avoid nixpkgs mpv wrapper breakage
   buildInputs = [
-    mpv
+    mpv-unwrapped
     dbus
     openssl
     libsecret
