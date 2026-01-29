@@ -12,7 +12,7 @@ This repository provides the following packages:
 |---|---|---|
 | [`abs-tui`](https://github.com/vdemeester/abs-tui) | `0.1.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`deptree`](https://github.com/vc60er/deptree) | `20251114.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`gh-news`](https://github.com/chmouel/gh-news) | `0.7.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`gh-news`](https://github.com/chmouel/gh-news) | `0.8.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`kss`](https://github.com/chmouel/kss) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`startpaac`](https://github.com/chmouel/startpaac) | `20260127.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 
