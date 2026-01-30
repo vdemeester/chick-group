@@ -1,2 +1,2 @@
 /.pre-commit-config.yaml
-/result*
+/result*.claude/settings.local.json
