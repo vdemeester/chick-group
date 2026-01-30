@@ -26,8 +26,9 @@ function update_github_repo() {
     sri_hash=$(nix hash to-sri --type sha256 "$digest")
 
     if [ "$is_go_module" = "true" ] && [ -n "$test_package" ]; then
-        # Write initial JSON without vendorHash
-        echo "{\"type\": \"github\", \"owner\": \"${owner}\", \"repo\": \"${repo}\", \"rev\": \"${commit_sha}\", \"sha256\": \"${sri_hash}\", \"version\": \"${version_number}\"}" > $repo-$output_branch.json
+        # Write JSON with a fakeHash so the package can be evaluated
+        fake_hash="sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+        echo "{\"type\": \"github\", \"owner\": \"${owner}\", \"repo\": \"${repo}\", \"rev\": \"${commit_sha}\", \"sha256\": \"${sri_hash}\", \"version\": \"${version_number}\", \"vendorHash\": \"${fake_hash}\"}" > $repo-$output_branch.json
 
         # Try to compute vendorHash by building with fakeHash and extracting correct hash
         echo "Computing vendorHash for $test_package..."
@@ -39,7 +40,7 @@ function update_github_repo() {
             echo "Computed vendorHash: $vendor_hash"
             echo "{\"type\": \"github\", \"owner\": \"${owner}\", \"repo\": \"${repo}\", \"rev\": \"${commit_sha}\", \"sha256\": \"${sri_hash}\", \"version\": \"${version_number}\", \"vendorHash\": \"${vendor_hash}\"}" > $repo-$output_branch.json
         else
-            echo "Warning: Could not compute vendorHash, leaving empty"
+            echo "Warning: Could not compute vendorHash, keeping fakeHash (will need manual fix)"
         fi
     else
         echo "{\"type\": \"github\", \"owner\": \"${owner}\", \"repo\": \"${repo}\", \"rev\": \"${commit_sha}\", \"sha256\": \"${sri_hash}\", \"version\": \"${version_number}\"}" > $repo-$output_branch.json

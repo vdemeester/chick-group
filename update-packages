@@ -44,16 +44,31 @@ get_git_packages() {
     echo "${git_packages[@]}"
 }
 
-# Check if a package is git-tracked
+# Check if a package is git-tracked (either by name or by using a git-tracked repo JSON)
 is_git_package() {
     local package=$1
     local git_packages=($(get_git_packages))
 
+    # Check if package name matches a git repo name
     for git_pkg in "${git_packages[@]}"; do
         if [ "$git_pkg" = "$package" ]; then
             return 0
         fi
     done
+
+    # Check if the package's nix file imports any git-tracked repo JSON
+    local pkg_file="packages/${package}.nix"
+    if [ -f "$pkg_file" ]; then
+        for json_file in repos/*.json; do
+            if [ -f "$json_file" ]; then
+                local json_basename=$(basename "$json_file")
+                if grep -q "$json_basename" "$pkg_file" 2>/dev/null; then
+                    return 0
+                fi
+            fi
+        done
+    fi
+
     return 1
 }
 
