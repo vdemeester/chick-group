@@ -38,7 +38,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
     description = "Terminal client for Audiobookshelf";
     homepage = "https://github.com/vdemeester/abs-tui";
     license = lib.licenses.mit;
-    platforms = lib.platforms.unix;
+    # Exclude aarch64-darwin: mpv -> swift is broken on nixpkgs-unstable
+    platforms = lib.platforms.linux ++ [ "x86_64-darwin" ];
     mainProgram = "abs-tui";
   };
 })
