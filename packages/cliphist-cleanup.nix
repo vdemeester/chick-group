@@ -5,7 +5,7 @@
 }:
 
 let
-  repoMeta = lib.importJSON ../repos/deptree-main.json;
+  repoMeta = lib.importJSON ../repos/x-main.json;
   fetcher =
     if repoMeta.type == "github" then
       fetchFromGitHub
@@ -13,7 +13,7 @@ let
       throw "Unknown repository type ${repoMeta.type}";
 in
 buildGoModule (finalAttrs: {
-  pname = "deptree";
+  pname = "cliphist-cleanup";
   inherit (repoMeta) version;
 
   src = fetcher (
@@ -26,11 +26,13 @@ buildGoModule (finalAttrs: {
 
   vendorHash = repoMeta.vendorHash or (throw "vendorHash missing from ${repoMeta.repo} metadata");
 
+  subPackages = [ "cmd/cliphist-cleanup" ];
+
   meta = {
-    description = "Dependency tree visualization tool";
-    homepage = "https://github.com/vc60er/${finalAttrs.pname}";
-    license = lib.licenses.asl20;
-    platforms = lib.platforms.unix;
+    description = "Clean up cliphist clipboard history by pattern matching";
+    homepage = "https://github.com/vdemeester/x";
+    license = lib.licenses.mit;
+    platforms = lib.platforms.linux;
     mainProgram = finalAttrs.pname;
   };
 })

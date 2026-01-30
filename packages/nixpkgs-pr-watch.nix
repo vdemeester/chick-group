@@ -2,10 +2,12 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  makeWrapper,
+  gh,
 }:
 
 let
-  repoMeta = lib.importJSON ../repos/deptree-main.json;
+  repoMeta = lib.importJSON ../repos/x-main.json;
   fetcher =
     if repoMeta.type == "github" then
       fetchFromGitHub
@@ -13,7 +15,7 @@ let
       throw "Unknown repository type ${repoMeta.type}";
 in
 buildGoModule (finalAttrs: {
-  pname = "deptree";
+  pname = "nixpkgs-pr-watch";
   inherit (repoMeta) version;
 
   src = fetcher (
@@ -26,10 +28,19 @@ buildGoModule (finalAttrs: {
 
   vendorHash = repoMeta.vendorHash or (throw "vendorHash missing from ${repoMeta.repo} metadata");
 
+  nativeBuildInputs = [ makeWrapper ];
+
+  subPackages = [ "cmd/nixpkgs-pr-watch" ];
+
+  postInstall = ''
+    wrapProgram $out/bin/nixpkgs-pr-watch \
+      --prefix PATH : ${lib.makeBinPath [ gh ]}
+  '';
+
   meta = {
-    description = "Dependency tree visualization tool";
-    homepage = "https://github.com/vc60er/${finalAttrs.pname}";
-    license = lib.licenses.asl20;
+    description = "Watch nixpkgs PRs affecting your system packages";
+    homepage = "https://github.com/vdemeester/x";
+    license = lib.licenses.mit;
     platforms = lib.platforms.unix;
     mainProgram = finalAttrs.pname;
   };
