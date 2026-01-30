@@ -24,6 +24,9 @@ jobs:
       - name: Update packages
         run: |
           ./update-packages
+      - name: Generate package table
+        run: |
+          ./generate-package-table
       - name: Commit and push updates
         run: |
           git status
