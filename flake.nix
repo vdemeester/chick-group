@@ -9,9 +9,19 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
-        githubActions = inputs.nix-github-actions.lib.mkGithubMatrix {
-          checks = nixpkgs.lib.getAttrs [ "x86_64-linux" "aarch64-darwin" ] self.packages;
-        };
+        githubActions =
+          let
+            lib = nixpkgs.lib;
+            # Filter packages to only include those supported on each platform
+            filterSupportedPackages =
+              system: packages:
+              lib.filterAttrs (_name: pkg: lib.meta.availableOn { inherit system; } pkg) packages;
+          in
+          inputs.nix-github-actions.lib.mkGithubMatrix {
+            checks = lib.mapAttrs filterSupportedPackages (
+              lib.getAttrs [ "x86_64-linux" "aarch64-darwin" ] self.packages
+            );
+          };
         overlays = {
           default = final: prev: import ./overlays final prev;
         };
