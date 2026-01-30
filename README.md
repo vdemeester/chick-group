@@ -11,7 +11,7 @@ This repository provides the following packages:
 | Package | Version | Platforms |
 |---|---|---|
 | [`abs-tui`](https://github.com/vdemeester/abs-tui) | `0.1.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260130.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260130.0` | `aarch64-linux`, `x86_64-linux` |
 | [`deptree`](https://github.com/vc60er/deptree) | `20251114.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gh-news`](https://github.com/chmouel/gh-news) | `0.8.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gh-pr`](https://github.com/vdemeester/x) | `20260130.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |

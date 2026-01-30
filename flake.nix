@@ -9,19 +9,9 @@
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       flake = {
-        githubActions =
-          let
-            lib = nixpkgs.lib;
-            # Filter packages to only include those supported on each platform
-            filterSupportedPackages =
-              system: packages:
-              lib.filterAttrs (_name: pkg: lib.meta.availableOn { inherit system; } pkg) packages;
-          in
-          inputs.nix-github-actions.lib.mkGithubMatrix {
-            checks = lib.mapAttrs filterSupportedPackages (
-              lib.getAttrs [ "x86_64-linux" "aarch64-darwin" ] self.packages
-            );
-          };
+        githubActions = inputs.nix-github-actions.lib.mkGithubMatrix {
+          checks = nixpkgs.lib.getAttrs [ "x86_64-linux" "aarch64-darwin" ] self.packages;
+        };
         overlays = {
           default = final: prev: import ./overlays final prev;
         };
@@ -114,8 +104,10 @@
           packages =
             let
               drvAttrs = builtins.filter (n: lib.isDerivation pkgs.${n}) overlayAttrs;
+              # Filter to only include packages supported on this system
+              supportedAttrs = builtins.filter (n: lib.meta.availableOn { inherit system; } pkgs.${n}) drvAttrs;
             in
-            lib.listToAttrs (map (n: lib.nameValuePair n pkgs.${n}) drvAttrs);
+            lib.listToAttrs (map (n: lib.nameValuePair n pkgs.${n}) supportedAttrs);
           checks = {
             pre-commit-check = pre-commit-hooks.lib.${system}.run {
               src = ./.;
