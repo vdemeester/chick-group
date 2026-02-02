@@ -1,19 +1,17 @@
 {
   lib,
   fetchFromGitHub,
-  python3Packages,
+  jira2markdown,
+  python3,
 }:
 
-let
-  jira2markdown = python3Packages.callPackage ./jira2markdown.nix { };
-in
-python3Packages.buildPythonApplication (finalAttrs: {
+python3.pkgs.buildPythonApplication (finalAttrs: {
   pname = "jayrah";
   version = "0.1.0";
 
   pyproject = true;
 
-  disabled = python3Packages.pythonOlder "3.12";
+  disabled = python3.pkgs.pythonOlder "3.12";
 
   src = fetchFromGitHub {
     owner = "chmouel";
@@ -23,8 +21,8 @@ python3Packages.buildPythonApplication (finalAttrs: {
   };
 
   nativeBuildInputs = [
-    python3Packages.setuptools
-    python3Packages.wheel
+    python3.pkgs.setuptools
+    python3.pkgs.wheel
   ];
 
   postPatch = ''
@@ -32,15 +30,15 @@ python3Packages.buildPythonApplication (finalAttrs: {
       --replace 'py-modules = ["jayrah"]' 'packages = { find = { include = ["jayrah*"] } }'
   '';
 
-  propagatedBuildInputs = [
-    python3Packages.click
-    python3Packages.fastapi
-    python3Packages.mcp
-    python3Packages.pyyaml
-    python3Packages.rich
-    python3Packages.textual
-    python3Packages.textual-dev
-    python3Packages.uvicorn
+  propagatedBuildInputs = with python3.pkgs; [
+    click
+    fastapi
+    mcp
+    pyyaml
+    rich
+    textual
+    textual-dev
+    uvicorn
     jira2markdown
   ];
 

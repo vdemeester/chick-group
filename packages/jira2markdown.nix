@@ -1,12 +1,12 @@
-{ lib, fetchPypi, python3Packages }:
+{ lib, fetchPypi, python3 }:
 
-python3Packages.buildPythonPackage (finalAttrs: {
+python3.pkgs.buildPythonPackage (finalAttrs: {
   pname = "jira2markdown";
   version = "0.5";
 
   pyproject = true;
 
-  disabled = python3Packages.pythonOlder "3.9";
+  disabled = python3.pkgs.pythonOlder "3.9";
 
   src = fetchPypi {
     inherit (finalAttrs) pname version;
@@ -14,11 +14,11 @@ python3Packages.buildPythonPackage (finalAttrs: {
   };
 
   nativeBuildInputs = [
-    python3Packages.poetry-core
+    python3.pkgs.poetry-core
   ];
 
   propagatedBuildInputs = [
-    python3Packages.pyparsing
+    python3.pkgs.pyparsing
   ];
 
   pythonImportsCheck = [
