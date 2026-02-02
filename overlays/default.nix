@@ -5,6 +5,8 @@ _self: super: {
   gh-news = super.callPackage ../packages/gh-news.nix { };
   gh-pr = super.callPackage ../packages/gh-pr.nix { };
   go-better-html-coverage = super.callPackage ../packages/go-better-html-coverage.nix { };
+  jayrah = super.callPackage ../packages/jayrah.nix { };
+  jira2markdown = super.callPackage ../packages/jira2markdown.nix { };
   kss = super.callPackage ../packages/kss.nix { };
   lazypr = super.callPackage ../packages/lazypr.nix { };
   nixpkgs-pr-watch = super.callPackage ../packages/nixpkgs-pr-watch.nix { };
