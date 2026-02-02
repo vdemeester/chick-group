@@ -8,5 +8,6 @@ _self: super: {
   kss = super.callPackage ../packages/kss.nix { };
   lazypr = super.callPackage ../packages/lazypr.nix { };
   nixpkgs-pr-watch = super.callPackage ../packages/nixpkgs-pr-watch.nix { };
+  pi-coding-agent = super.callPackage ../packages/pi-coding-agent.nix { };
   startpaac = super.callPackage ../packages/startpaac.nix { };
 }
