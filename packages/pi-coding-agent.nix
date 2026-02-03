@@ -1,6 +1,5 @@
 {
   lib,
-  stdenv,
   buildNpmPackage,
   fetchzip,
   versionCheckHook,
@@ -16,7 +15,7 @@ buildNpmPackage (finalAttrs: {
     hash = "sha256-/e3XAxluTeqTeK/dE5e1Q87U0P8WeXOe4s7QU09ZY/c=";
   };
 
-  npmDepsHash = "sha256-LfPwE7eA1bs7sfsoP7P206SRaKvBtdxRH3S4fw81vmg=";
+  npmDepsHash = "sha256-gGXhojt6lZpEQv+cDmL+tYL6yFMIQ0f6CmXhTBvzN4k=";
 
   postPatch = ''
     cp ${./package-lock.json} package-lock.json
