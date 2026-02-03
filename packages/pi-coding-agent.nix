@@ -3,7 +3,6 @@
   buildNpmPackage,
   fetchzip,
   versionCheckHook,
-  nix-update-script,
 }:
 
 buildNpmPackage (finalAttrs: {
@@ -26,7 +25,7 @@ buildNpmPackage (finalAttrs: {
   nativeInstallCheckInputs = [ versionCheckHook ];
   doInstallCheck = true;
 
-  passthru.updateScript = nix-update-script { };
+  passthru.updateScript = ./update-pi-coding-agent.sh;
 
   meta = {
     description = "Minimal terminal coding agent that adapts to your workflows";
