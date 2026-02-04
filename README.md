@@ -11,17 +11,20 @@ This repository provides the following packages:
 | Package | Version | Platforms |
 |---|---|---|
 | [`abs-tui`](https://github.com/vdemeester/abs-tui) | `0.1.0` | `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260130.0` | `aarch64-linux`, `x86_64-linux` |
+| [`batzconverter`](https://github.com/chmouel/batzconverter) | `2.8.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-linux`, `x86_64-linux` |
 | [`deptree`](https://github.com/vc60er/deptree) | `20251114.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gh-news`](https://github.com/chmouel/gh-news) | `0.8.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`gh-pr`](https://github.com/vdemeester/x) | `20260130.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`gh-pr`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`gitmal`](https://github.com/antonmedv/gitmal) | `1.0.2` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`go-better-html-coverage`](https://github.com/chmouel/go-better-html-coverage) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`jayrah`](https://github.com/chmouel/jayrah) | `0.1.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`jira2markdown`](https://github.com/catcombo/jira2markdown) | `0.5` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`kss`](https://github.com/chmouel/kss) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`lazypr`](https://github.com/vdemeester/x) | `20260130.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260130.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.51.2` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`lazypr`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`nextmeeting`](https://github.com/chmouel/nextmeeting) | `3.1.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.51.6` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`startpaac`](https://github.com/chmouel/startpaac) | `20260127.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 
 <!-- END PACKAGE TABLE -->
