@@ -76,10 +76,7 @@ is_git_package() {
 is_npm_package() {
     local package=$1
     local pkg_file="packages/${package}.nix"
-    if [ -f "$pkg_file" ]; then
-        grep -q "buildNpmPackage" "$pkg_file" 2>/dev/null && return 0
-    fi
-    return 1
+    [ -f "$pkg_file" ] && grep -q -w "buildNpmPackage" "$pkg_file" 2>/dev/null
 }
 
 # Function to update packages using nix-update
