@@ -4,10 +4,13 @@
 # This script is called by nix-update via passthru.updateScript.
 # nix-update handles version and source hash updates automatically.
 # This script only handles what nix-update can't: updating npmDepsHash.
+#
+# When called via nix-update, the current working directory is the repo root.
 
 set -euo pipefail
 
-cd "$(dirname "$0")/.."
+# Save the repo root (current working directory when called via nix-update)
+REPO_ROOT="$(pwd)"
 
 # Get the latest version from npm
 version=$(npm view @mariozechner/pi-coding-agent version)
@@ -29,13 +32,12 @@ if [ ! -f package-lock.json ]; then
 fi
 
 # Copy the new package-lock.json back to the repo
-cd - > /dev/null
-cp "$TEMP_DIR/package/package-lock.json" packages/package-lock.json
+cp "$TEMP_DIR/package/package-lock.json" "$REPO_ROOT/packages/package-lock.json"
 
 # Calculate and update npmDepsHash
 echo "Calculating npmDepsHash..."
-new_hash=$(prefetch-npm-deps packages/package-lock.json)
-sed -i "s|npmDepsHash = \"sha256-[^\"]*\";|npmDepsHash = \"${new_hash}\";|" packages/pi-coding-agent.nix
+new_hash=$(prefetch-npm-deps "$REPO_ROOT/packages/package-lock.json")
+sed -i "s|npmDepsHash = \"sha256-[^\"]*\";|npmDepsHash = \"${new_hash}\";|" "$REPO_ROOT/packages/pi-coding-agent.nix"
 
 echo "✓ Update complete!"
 echo "  Version: $version"
