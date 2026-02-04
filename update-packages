@@ -72,48 +72,14 @@ is_git_package() {
     return 1
 }
 
-# Check if a package has a passthru.updateScript
-has_update_script() {
+# Check if a package is an npm package (uses buildNpmPackage)
+is_npm_package() {
     local package=$1
-    # Check if the package has passthru.updateScript defined
-    nix eval --json ".#packages.x86_64-linux.${package}.passthru.updateScript" 2>/dev/null && return 0
+    local pkg_file="packages/${package}.nix"
+    if [ -f "$pkg_file" ]; then
+        grep -q "buildNpmPackage" "$pkg_file" 2>/dev/null && return 0
+    fi
     return 1
-}
-
-# Run a package's updateScript in the appropriate nix develop environment
-run_update_script() {
-    local package=$1
-    info "Running updateScript for $package..."
-
-    # Get the updateScript path
-    local script_path
-    script_path=$(nix build --no-link --print-out-paths --impure --expr "
-        with import <nixpkgs> {};
-        let pkg = (builtins.getFlake (toString ./.)).packages.\${builtins.currentSystem}.${package};
-        in pkgs.writeScript \"updateScript\" (lib.escapeShellArgs (pkgs.lib.toList (pkg.passthru.updateScript.command or pkg.passthru.updateScript)))
-    " 2>/dev/null)
-
-    if [ -z "$script_path" ]; then
-        warn "Could not find updateScript for $package"
-        return 1
-    fi
-
-    # Run the script in nix develop environment
-    if nix develop --impure --expr "
-        with import <nixpkgs> {};
-        pkgs.mkShell { inputsFrom = [(builtins.getFlake (toString ./.)).packages.\${builtins.currentSystem}.${package}]; }
-    " --command bash -c "$script_path"; then
-        info "Successfully ran updateScript for $package"
-        # Stage and commit the updateScript changes
-        if ! git diff --quiet packages/; then
-            git add packages/
-            git commit -m "${package}: update npmDepsHash via updateScript"
-        fi
-        return 0
-    else
-        warn "Failed to run updateScript for $package"
-        return 1
-    fi
 }
 
 # Function to update packages using nix-update
@@ -121,15 +87,18 @@ update_with_nix_update() {
     local package=$1
     info "Updating $package with nix-update..."
 
-    # Phase 1: Run nix-update normally (updates version and src hash)
-    if nix-update --flake --commit "$package"; then
+    # Build nix-update command with appropriate flags
+    local nix_update_args=(--flake --commit)
+
+    # For npm packages, use --generate-lockfile to update package-lock.json
+    # nix-update will automatically handle version, src hash, and npmDepsHash
+    if is_npm_package "$package"; then
+        info "Detected npm package, using --generate-lockfile"
+        nix_update_args+=(--generate-lockfile)
+    fi
+
+    if nix-update "${nix_update_args[@]}" "$package"; then
         info "Successfully updated $package"
-
-        # Phase 2: If package has an updateScript, run it to handle extra updates
-        if has_update_script "$package"; then
-            run_update_script "$package" || true
-        fi
-
         return 0
     else
         warn "Failed to update $package with nix-update"

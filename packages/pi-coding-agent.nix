@@ -25,7 +25,8 @@ buildNpmPackage (finalAttrs: {
   nativeInstallCheckInputs = [ versionCheckHook ];
   doInstallCheck = true;
 
-  passthru.updateScript = ./update-pi-coding-agent.sh;
+  # nix-update handles npm packages automatically with --generate-lockfile
+  # No custom updateScript needed
 
   meta = {
     description = "Minimal terminal coding agent that adapts to your workflows";
