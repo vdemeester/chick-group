@@ -6,14 +6,14 @@
 
 python3.pkgs.buildPythonPackage rec {
   pname = "nextmeeting";
-  version = "3.0.0";
+  version = "3.1.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "chmouel";
     repo = "nextmeeting";
     rev = version;
-    hash = "sha256-lw1orSZ6Wbr9u5kr6t7B70AbWNeESnD0M+NjBg9tT5g=";
+    hash = "sha256-jIFH6IjqFwgpGjgp3xQws32jJVQZCZXScY7dDs0Wyic=";
   };
 
   nativeBuildInputs = [ python3.pkgs.hatchling ];
