@@ -1,9 +1,11 @@
 _self: super: {
   abs-tui = super.callPackage ../packages/abs-tui.nix { };
+  batzconverter = super.callPackage ../packages/batzconverter.nix { };
   cliphist-cleanup = super.callPackage ../packages/cliphist-cleanup.nix { };
   deptree = super.callPackage ../packages/deptree.nix { };
   gh-news = super.callPackage ../packages/gh-news.nix { };
   gh-pr = super.callPackage ../packages/gh-pr.nix { };
+  gitmal = super.callPackage ../packages/gitmal.nix { };
   go-better-html-coverage = super.callPackage ../packages/go-better-html-coverage.nix { };
   jayrah = super.callPackage ../packages/jayrah.nix { };
   jira2markdown = super.callPackage ../packages/jira2markdown.nix { };

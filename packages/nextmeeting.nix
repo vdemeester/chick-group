@@ -16,9 +16,9 @@ python3.pkgs.buildPythonPackage rec {
     hash = "sha256-lw1orSZ6Wbr9u5kr6t7B70AbWNeESnD0M+NjBg9tT5g=";
   };
 
-  build-system = [ python3.pkgs.hatchling ];
+  nativeBuildInputs = [ python3.pkgs.hatchling ];
 
-  dependencies = [
+  propagatedBuildInputs = [
     python3.pkgs.python-dateutil
     python3.pkgs.caldav
   ];
