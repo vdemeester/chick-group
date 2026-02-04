@@ -1,17 +1,17 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i bash -p cacert nodejs git nix-update nix gnused findutils curl jq prefetch-npm-deps
+#!nix-shell -i bash -p cacert nodejs git nix gnused findutils curl jq prefetch-npm-deps
+
+# This script is called by nix-update via passthru.updateScript.
+# nix-update handles version and source hash updates automatically.
+# This script only handles what nix-update can't: updating npmDepsHash.
 
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
 
+# Get the latest version from npm
 version=$(npm view @mariozechner/pi-coding-agent version)
-
 echo "Latest version: $version"
-
-# Update version and source hash using nix-update
-# Note: nix-update is called without -u/--use-update-script to avoid recursion
-nix-update pi-coding-agent --flake --version="$version" --override-filename packages/pi-coding-agent.nix
 
 # Download the new package-lock.json from npm
 echo "Downloading package-lock.json for version $version..."
@@ -29,7 +29,7 @@ if [ ! -f package-lock.json ]; then
 fi
 
 # Copy the new package-lock.json back to the repo
-cd -
+cd - > /dev/null
 cp "$TEMP_DIR/package/package-lock.json" packages/package-lock.json
 
 # Calculate and update npmDepsHash
