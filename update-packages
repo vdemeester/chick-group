@@ -106,8 +106,6 @@ update_npm_package() {
     # Create a temporary directory for npm operations
     local tmpdir
     tmpdir=$(mktemp -d)
-    # Cleanup function
-    cleanup_tmpdir() { rm -rf "$tmpdir"; }
 
     # Get the npm package name from the nix file (extract from URL or pname)
     local npm_package_name
@@ -131,7 +129,7 @@ update_npm_package() {
         info "Retrying with: $tarball_url"
         if ! curl -sL "$tarball_url" | tar -xz -C "$tmpdir"; then
             error "Failed to download package tarball"
-            cleanup_tmpdir
+            rm -rf "$tmpdir"
             return 1
         fi
     fi
@@ -141,7 +139,7 @@ update_npm_package() {
 
     if [ ! -f "$pkg_dir/package.json" ]; then
         error "package.json not found in extracted tarball"
-        cleanup_tmpdir
+        rm -rf "$tmpdir"
         return 1
     fi
 
@@ -149,13 +147,13 @@ update_npm_package() {
     info "Running npm install --package-lock-only..."
     (cd "$pkg_dir" && npm install --package-lock-only --ignore-scripts) || {
         error "Failed to generate package-lock.json"
-        cleanup_tmpdir
+        rm -rf "$tmpdir"
         return 1
     }
 
     if [ ! -f "$pkg_dir/package-lock.json" ]; then
         error "package-lock.json was not generated"
-        cleanup_tmpdir
+        rm -rf "$tmpdir"
         return 1
     fi
 
@@ -169,7 +167,7 @@ update_npm_package() {
     new_hash=$(prefetch-npm-deps "packages/package-lock.json")
     if [ -z "$new_hash" ]; then
         error "Failed to calculate npmDepsHash"
-        cleanup_tmpdir
+        rm -rf "$tmpdir"
         return 1
     fi
     info "New npmDepsHash: $new_hash"
@@ -186,7 +184,7 @@ update_npm_package() {
 - Regenerated package-lock.json
 - Updated npmDepsHash"
 
-    cleanup_tmpdir
+    rm -rf "$tmpdir"
     info "Successfully updated $package to $new_version"
     return 0
 }
