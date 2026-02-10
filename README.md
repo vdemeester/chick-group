@@ -11,10 +11,10 @@ This repository provides the following packages:
 | Package | Version | Platforms |
 |---|---|---|
 | [`abs-tui`](https://github.com/vdemeester/abs-tui) | `0.1.0` | `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`batzconverter`](https://github.com/chmouel/batzconverter) | `2.8.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`batzconverter`](https://github.com/chmouel/batzconverter) | `2.9.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-linux`, `x86_64-linux` |
 | [`deptree`](https://github.com/vc60er/deptree) | `20251114.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`gh-news`](https://github.com/chmouel/gh-news) | `0.8.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`gh-news`](https://github.com/chmouel/gh-news) | `0.9.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gh-pr`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gitmal`](https://github.com/antonmedv/gitmal) | `1.0.2` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`go-better-html-coverage`](https://github.com/chmouel/go-better-html-coverage) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
