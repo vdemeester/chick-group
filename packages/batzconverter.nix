@@ -12,13 +12,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "batzconverter";
-  version = "2.8.0";
+  version = "2.9.0";
 
   src = fetchFromGitHub {
     owner = "chmouel";
     repo = "batzconverter";
     rev = finalAttrs.version;
-    hash = "sha256-9tN0fr1FcAxBRDpV5l7N6iAQ+1WOb6gEbpcmahfta5o=";
+    hash = "sha256-O2tym30NmvbhKh290o4xUr6W3Cs+tPwvx0VhahB4KEU=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
