@@ -12,6 +12,7 @@ This repository provides the following packages:
 |---|---|---|
 | [`abs-tui`](https://github.com/vdemeester/abs-tui) | `0.1.0` | `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`batzconverter`](https://github.com/chmouel/batzconverter) | `2.9.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`bluetooth-monitor`](https://github.com/freedreamer82/bluetooth-monitor) | `unstable-2018-06-08` | `aarch64-linux`, `x86_64-linux` |
 | [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-linux`, `x86_64-linux` |
 | [`deptree`](https://github.com/vc60er/deptree) | `20251114.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gh-news`](https://github.com/chmouel/gh-news) | `0.9.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
@@ -25,6 +26,7 @@ This repository provides the following packages:
 | [`nextmeeting`](https://github.com/chmouel/nextmeeting) | `3.1.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.52.10` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`raffi`](https://github.com/chmouel/raffi) | `0.16.0` | `aarch64-linux`, `x86_64-linux` |
 | [`startpaac`](https://github.com/chmouel/startpaac) | `20260210.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 
 <!-- END PACKAGE TABLE -->
