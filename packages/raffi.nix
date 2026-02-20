@@ -4,6 +4,9 @@
   rustPlatform,
   makeBinaryWrapper,
   fuzzel,
+  wayland,
+  libxkbcommon,
+  vulkan-loader,
   additionalPrograms ? [ ],
 }:
 
@@ -34,7 +37,14 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   postFixup = ''
     wrapProgram $out/bin/raffi \
-      --prefix PATH : ${lib.makeBinPath ([ fuzzel ] ++ additionalPrograms)}
+      --prefix PATH : ${lib.makeBinPath ([ fuzzel ] ++ additionalPrograms)} \
+      --prefix LD_LIBRARY_PATH : ${
+        lib.makeLibraryPath [
+          wayland
+          libxkbcommon
+          vulkan-loader
+        ]
+      }
   '';
 
   meta = {
