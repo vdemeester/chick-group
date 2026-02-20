@@ -6,7 +6,6 @@
   fuzzel,
   wayland,
   libxkbcommon,
-  vulkan-loader,
   additionalPrograms ? [ ],
 }:
 
@@ -42,7 +41,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
         lib.makeLibraryPath [
           wayland
           libxkbcommon
-          vulkan-loader
         ]
       }
   '';
