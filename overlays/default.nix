@@ -12,6 +12,7 @@ _self: super: {
   jira2markdown = super.callPackage ../packages/jira2markdown.nix { };
   kss = super.callPackage ../packages/kss.nix { };
   lazypr = super.callPackage ../packages/lazypr.nix { };
+  lazyworktree = super.callPackage ../packages/lazyworktree.nix { };
   nextmeeting = super.callPackage ../packages/nextmeeting.nix { };
   nixpkgs-pr-watch = super.callPackage ../packages/nixpkgs-pr-watch.nix { };
   pi-coding-agent = super.callPackage ../packages/pi-coding-agent.nix { };
