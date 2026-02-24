@@ -23,11 +23,12 @@ This repository provides the following packages:
 | [`jira2markdown`](https://github.com/catcombo/jira2markdown) | `0.5` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`kss`](https://github.com/chmouel/kss) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`lazypr`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`lazyworktree`](https://github.com/chmouel/lazyworktree) | `1.38.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`nextmeeting`](https://github.com/chmouel/nextmeeting) | `3.1.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260203.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.54.2` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`raffi`](https://github.com/chmouel/raffi) | `0.16.0` | `aarch64-linux`, `x86_64-linux` |
-| [`startpaac`](https://github.com/chmouel/startpaac) | `20260210.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`startpaac`](https://github.com/chmouel/startpaac) | `20260223.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 
 <!-- END PACKAGE TABLE -->
 
