@@ -2,6 +2,9 @@
 
 🐤 Collection of Nix packages maintained by [@vdemeester](https://github.com/vdemeester)
 
+> [!NOTE]
+> This repository (and this the flake) might update often as it tries to update packages nightly.
+
 ## Packages
 
 This repository provides the following packages:
