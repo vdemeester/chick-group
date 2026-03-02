@@ -33,5 +33,6 @@ python3.pkgs.buildPythonPackage rec {
     homepage = "https://github.com/chmouel/nextmeeting";
     license = lib.licenses.asl20;
     mainProgram = "nextmeeting";
+    platforms = lib.platforms.linux;
   };
 }
