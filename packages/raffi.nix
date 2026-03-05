@@ -3,6 +3,7 @@
   fetchFromGitHub,
   rustPlatform,
   makeBinaryWrapper,
+  writableTmpDirAsHomeHook,
   fuzzel,
   wayland,
   libxkbcommon,
@@ -24,6 +25,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   nativeBuildInputs = [
     makeBinaryWrapper
+  ];
+
+  nativeCheckInputs = [
+    writableTmpDirAsHomeHook
   ];
 
   checkFlags = [
