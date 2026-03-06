@@ -9,13 +9,13 @@
 
 buildGoModule (finalAttrs: {
   pname = "lazyworktree";
-  version = "1.40.0";
+  version = "1.41.0";
 
   src = fetchFromGitHub {
     owner = "chmouel";
     repo = "lazyworktree";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-Wibxuzn85IMht3vn5jN3OcuDCGd3plmxNdkLD9bgv5M=";
+    hash = "sha256-5KCfWp6++qTOzBuaAlT5D9BWzKQy2gdNF6Dkjhp/uxo=";
   };
 
   vendorHash = "sha256-I0Smxe9DbmkDScHrOMJ5L2F2avfM3jG7k/8Goghe9Po=";
