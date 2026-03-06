@@ -31,6 +31,17 @@ rustPlatform.buildRustPackage (finalAttrs: {
     writableTmpDirAsHomeHook
   ];
 
+  preCheck = ''
+    # Several tests use `firefox` in their config fixtures. The test parses configs
+    # via `read_config_from_reader` which validates that referenced binaries exist
+    # in PATH, filtering out entries with missing binaries. Provide a stub so these
+    # tests can run in the sandbox.
+    mkdir -p "$TMPDIR/fake-bin"
+    touch "$TMPDIR/fake-bin/firefox"
+    chmod +x "$TMPDIR/fake-bin/firefox"
+    export PATH="$TMPDIR/fake-bin:$PATH"
+  '';
+
   checkFlags = [
     "--skip=tests::test_read_config_from_reader"
     "--skip=tests::test_addons_config_parsing"
