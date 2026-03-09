@@ -18,4 +18,5 @@ _self: super: {
   pi-coding-agent = super.callPackage ../packages/pi-coding-agent.nix { };
   raffi = super.callPackage ../packages/raffi.nix { };
   startpaac = super.callPackage ../packages/startpaac.nix { };
+  tekton-lsp = super.callPackage ../packages/tekton-lsp.nix { };
 }
