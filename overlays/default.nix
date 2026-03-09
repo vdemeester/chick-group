@@ -8,6 +8,7 @@ _self: super: {
   gh-pr = super.callPackage ../packages/gh-pr.nix { };
   gitmal = super.callPackage ../packages/gitmal.nix { };
   go-better-html-coverage = super.callPackage ../packages/go-better-html-coverage.nix { };
+  go-size-analyzer = super.callPackage ../packages/go-size-analyzer.nix { };
   jayrah = super.callPackage ../packages/jayrah.nix { };
   jira2markdown = super.callPackage ../packages/jira2markdown.nix { };
   kss = super.callPackage ../packages/kss.nix { };
