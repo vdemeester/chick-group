@@ -1,5 +1,6 @@
 #!/usr/bin/env nix-shell
 #! nix-shell -i bash -p bash git nix-update jq nodejs prefetch-npm-deps curl
+# shellcheck shell=bash
 
 set -euo pipefail
 
@@ -37,7 +38,8 @@ get_git_packages() {
     for json_file in repos/*.json; do
         if [ -f "$json_file" ]; then
             # Extract package name from filename (e.g., deptree-main.json -> deptree)
-            local pkg_name=$(basename "$json_file" | sed 's/-[^-]*\.json$//')
+            local pkg_name
+            pkg_name=$(basename "$json_file" | sed 's/-[^-]*\.json$//')
             git_packages+=("$pkg_name")
         fi
     done
@@ -47,7 +49,7 @@ get_git_packages() {
 # Check if a package is git-tracked (either by name or by using a git-tracked repo JSON)
 is_git_package() {
     local package=$1
-    local git_packages=($(get_git_packages))
+    IFS=" " read -ra git_packages <<< "$(get_git_packages)"
 
     # Check if package name matches a git repo name
     for git_pkg in "${git_packages[@]}"; do
@@ -61,7 +63,8 @@ is_git_package() {
     if [ -f "$pkg_file" ]; then
         for json_file in repos/*.json; do
             if [ -f "$json_file" ]; then
-                local json_basename=$(basename "$json_file")
+                local json_basename
+                json_basename=$(basename "$json_file")
                 if grep -q "$json_basename" "$pkg_file" 2>/dev/null; then
                     return 0
                 fi
@@ -157,14 +160,22 @@ update_npm_package() {
         return 1
     fi
 
+    # Detect the lockfile name from the nix file
+    local lockfile_name
+    lockfile_name=$(grep -oP '\./\K[^}]+package-lock[^}]*\.json' "$pkg_file" | head -1)
+    if [ -z "$lockfile_name" ]; then
+        lockfile_name="${package}-package-lock.json"
+    fi
+    info "Using lockfile: packages/$lockfile_name"
+
     # Copy the new package-lock.json to our repo
-    cp "$pkg_dir/package-lock.json" "packages/package-lock.json"
-    info "Updated packages/package-lock.json"
+    cp "$pkg_dir/package-lock.json" "packages/$lockfile_name"
+    info "Updated packages/$lockfile_name"
 
     # Calculate the new npmDepsHash
     info "Calculating new npmDepsHash..."
     local new_hash
-    new_hash=$(prefetch-npm-deps "packages/package-lock.json")
+    new_hash=$(prefetch-npm-deps "packages/$lockfile_name")
     if [ -z "$new_hash" ]; then
         error "Failed to calculate npmDepsHash"
         rm -rf "$tmpdir"
@@ -177,7 +188,7 @@ update_npm_package() {
 
     # Commit all changes together
     info "Committing changes..."
-    git add "$pkg_file" "packages/package-lock.json"
+    git add "$pkg_file" "packages/$lockfile_name"
     git commit -m "${package}: update to ${new_version}
 
 - Updated version and src hash
@@ -213,8 +224,9 @@ update_with_nix_update() {
 
 # Function to update packages from git repos
 update_from_git() {
+    # shellcheck disable=SC2034
     local specific_packages=("$@")
-    local git_packages=($(get_git_packages))
+    IFS=" " read -ra git_packages <<< "$(get_git_packages)"
 
     if [ ${#git_packages[@]} -eq 0 ]; then
         info "No git-tracked packages found"
@@ -235,8 +247,8 @@ update_from_git() {
 # Main update logic
 main() {
     local packages_to_update=("$@")
-    local all_packages=($(get_all_packages))
-    local git_packages=($(get_git_packages))
+    IFS=" " read -ra all_packages <<< "$(get_all_packages)"
+    IFS=" " read -ra git_packages <<< "$(get_git_packages)"
 
     info "Found packages in flake: ${all_packages[*]}"
     info "Git-tracked packages: ${git_packages[*]}"

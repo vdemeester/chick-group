@@ -16,6 +16,7 @@ _self: super: {
   lazyworktree = super.callPackage ../packages/lazyworktree.nix { };
   nextmeeting = super.callPackage ../packages/nextmeeting.nix { };
   nixpkgs-pr-watch = super.callPackage ../packages/nixpkgs-pr-watch.nix { };
+  pi-acp = super.callPackage ../packages/pi-acp.nix { };
   pi-coding-agent = super.callPackage ../packages/pi-coding-agent.nix { };
   raffi = super.callPackage ../packages/raffi.nix { };
   startpaac = super.callPackage ../packages/startpaac.nix { };

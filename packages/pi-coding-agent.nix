@@ -17,7 +17,7 @@ buildNpmPackage (finalAttrs: {
   npmDepsHash = "sha256-Nq+hAvtHlICWzMRr2TOc9nhiXAlwWiRyfZYNL8wL1OI=";
 
   postPatch = ''
-    cp ${./package-lock.json} package-lock.json
+    cp ${./pi-coding-agent-package-lock.json} package-lock.json
   '';
 
   dontNpmBuild = true;
