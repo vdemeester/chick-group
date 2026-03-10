@@ -22,6 +22,7 @@ This repository provides the following packages:
 | [`gh-pr`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gitmal`](https://github.com/antonmedv/gitmal) | `1.0.2` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`go-better-html-coverage`](https://github.com/chmouel/go-better-html-coverage) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`go-size-analyzer`](https://github.com/Zxilly/go-size-analyzer) | `1.11.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`jayrah`](https://github.com/chmouel/jayrah) | `0.1.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`jira2markdown`](https://github.com/catcombo/jira2markdown) | `0.5` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`kss`](https://github.com/chmouel/kss) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
@@ -31,7 +32,8 @@ This repository provides the following packages:
 | [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.57.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`raffi`](https://github.com/chmouel/raffi) | `0.20.0` | `aarch64-linux`, `x86_64-linux` |
-| [`startpaac`](https://github.com/chmouel/startpaac) | `20260226.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`startpaac`](https://github.com/chmouel/startpaac) | `20260309.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`tekton-lsp`](https://github.com/vdemeester/tekton-lsp-go) | `0.1.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 
 <!-- END PACKAGE TABLE -->
 
