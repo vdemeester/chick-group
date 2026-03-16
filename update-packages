@@ -27,9 +27,9 @@ error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-# Get all packages from the flake
+# Get all packages from the flake (space-separated on one line)
 get_all_packages() {
-    nix eval --json '.#packages.x86_64-linux' --apply 'builtins.attrNames' 2>/dev/null | jq -r '.[]'
+    nix eval --json '.#packages.x86_64-linux' --apply 'builtins.attrNames' 2>/dev/null | jq -r '.[]' | tr '\n' ' '
 }
 
 # Get packages that are tracked via git (have JSON files in repos/)
