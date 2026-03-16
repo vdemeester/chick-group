@@ -18,7 +18,7 @@ This repository provides the following packages:
 | [`bluetooth-monitor`](https://github.com/freedreamer82/bluetooth-monitor) | `unstable-2018-06-08` | `aarch64-linux`, `x86_64-linux` |
 | [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-linux`, `x86_64-linux` |
 | [`deptree`](https://github.com/vc60er/deptree) | `20251114.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`gh-news`](https://github.com/chmouel/gh-news) | `0.9.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`gh-news`](https://github.com/chmouel/gh-news) | `0.10.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gh-pr`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`gitmal`](https://github.com/antonmedv/gitmal) | `1.0.2` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`go-better-html-coverage`](https://github.com/chmouel/go-better-html-coverage) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
@@ -28,14 +28,14 @@ This repository provides the following packages:
 | [`jira2markdown`](https://github.com/catcombo/jira2markdown) | `0.5` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`kss`](https://github.com/chmouel/kss) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`lazypr`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`lazyworktree`](https://github.com/chmouel/lazyworktree) | `1.42.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`lazyworktree`](https://github.com/chmouel/lazyworktree) | `1.43.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`nextmeeting`](https://github.com/chmouel/nextmeeting) | `3.1.1` | `aarch64-linux`, `x86_64-linux` |
 | [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.22` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.57.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.23` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.58.3` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`raffi`](https://github.com/chmouel/raffi) | `0.20.0` | `aarch64-linux`, `x86_64-linux` |
 | [`startpaac`](https://github.com/chmouel/startpaac) | `20260312.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`tekton-lsp`](https://github.com/vdemeester/tekton-lsp-go) | `0.1.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`tekton-lsp`](https://github.com/vdemeester/tekton-lsp-go) | `0.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 
 <!-- END PACKAGE TABLE -->
 
