@@ -14,7 +14,7 @@ buildNpmPackage (finalAttrs: {
     hash = "sha256-G7xWVmnXcu7VhrN5fCkyd1SGGH00+mvPWVpcgJnUiAM=";
   };
 
-  npmDepsHash = "sha256-6cJvQpSHXAex5mdfr239iUztBx5kVKgU2rqq6qZmVso=";
+  npmDepsHash = "sha256-qiK0vCqeutRVuoarBrMs+8z1HgWKPzcxtcJbCWWNQBU=";
 
   postPatch = ''
     cp ${./pi-coding-agent-package-lock.json} package-lock.json
