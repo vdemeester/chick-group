@@ -31,6 +31,7 @@ This repository provides the following packages:
 | [`lazyworktree`](https://github.com/chmouel/lazyworktree) | `1.44.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`nextmeeting`](https://github.com/chmouel/nextmeeting) | `3.1.1` | `aarch64-linux`, `x86_64-linux` |
 | [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`pac-metrics-watch`](https://github.com/pipelines-as-code/pac-metrics-watch) | `20260320.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.23` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.61.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`raffi`](https://github.com/chmouel/raffi) | `0.20.0` | `aarch64-linux`, `x86_64-linux` |
