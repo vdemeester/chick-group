@@ -21,6 +21,7 @@ _self: super: {
   pi-acp = super.callPackage ../packages/pi-acp.nix { };
   pi-coding-agent = super.callPackage ../packages/pi-coding-agent.nix { };
   raffi = super.callPackage ../packages/raffi.nix { };
+  shotty = super.callPackage ../packages/shotty.nix { };
   startpaac = super.callPackage ../packages/startpaac.nix { };
   tekton-lsp = super.callPackage ../packages/tekton-lsp.nix { };
 }
