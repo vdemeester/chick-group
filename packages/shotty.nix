@@ -6,13 +6,13 @@
 
 buildGo126Module (finalAttrs: {
   pname = "shotty";
-  version = "0.1.0";
+  version = "0.1.1";
 
   src = fetchFromGitHub {
     owner = "vdemeester";
     repo = "shotty";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-HD3QcEvTcwwcmS3PP1X9B1W0vCYWTG6quzYHwNAMjWU=";
+    hash = "sha256-KADEfnmYD8Yf2d5yNaz+ULmmpgwLkmdbM//HQt97BPQ=";
   };
 
   vendorHash = "sha256-n9x5Tkw0lR5N/k9AWt662l1ZnrQZV1UB6OF7vV1C3ZE=";
