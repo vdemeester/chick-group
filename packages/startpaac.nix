@@ -47,7 +47,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   meta = {
     description = "StartPAAC - All in one setup for Pipelines as Code on Kind";
-    homepage = "https://github.com/chmouel/${finalAttrs.pname}";
+    homepage = "https://github.com/pipelines-as-code/${finalAttrs.pname}";
     license = lib.licenses.asl20;
     platforms = lib.platforms.unix;
     mainProgram = finalAttrs.pname;

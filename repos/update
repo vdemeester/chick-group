@@ -49,7 +49,7 @@ function update_github_repo() {
 
 
 update_github_repo vc60er deptree main true deptree
-update_github_repo openshift-pipelines startpaac main
+update_github_repo pipelines-as-code startpaac main
 update_github_repo pipelines-as-code pac-metrics-watch main true pac-metrics-watch
 update_github_repo vdemeester x main true lazypr
 
