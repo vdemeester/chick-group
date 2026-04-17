@@ -75,6 +75,13 @@ is_git_package() {
     return 1
 }
 
+# Check if a package tracks an unstable/git commit (version contains -unstable-)
+is_unstable_package() {
+    local package=$1
+    local pkg_file="packages/${package}.nix"
+    [ -f "$pkg_file" ] && grep -q 'version = ".*-unstable-' "$pkg_file" 2>/dev/null
+}
+
 # Check if a package is an npm package (uses buildNpmPackage)
 is_npm_package() {
     local package=$1
@@ -264,10 +271,15 @@ main() {
 
         # Then update packages that can use nix-update
         for package in "${all_packages[@]}"; do
-            if ! is_git_package "$package"; then
-                info "Updating $package with nix-update..."
-                update_with_nix_update "$package" || true
+            if is_git_package "$package"; then
+                continue
             fi
+            if is_unstable_package "$package"; then
+                info "Skipping $package (unstable/git-commit tracked package)"
+                continue
+            fi
+            info "Updating $package with nix-update..."
+            update_with_nix_update "$package" || true
         done
 
         info "All package updates completed"
