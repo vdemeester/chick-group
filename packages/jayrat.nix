@@ -8,13 +8,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "jayrat";
-  version = "0.1.0-unstable-2026-03-31";
+  version = "0.1.0-unstable-2026-04-17";
 
   src = fetchFromGitLab {
     owner = "chmouel";
     repo = "jayrat";
-    rev = "9a242b291e3e4113ff501d6b7e29e383fc48533d";
-    hash = "sha256-1tCVzHtJDoePCctEN9CYtPIEyUyGL/bgfCyxxgfvOso=";
+    rev = "9b432248aea9255042f53943d043ae8b212fa7e7";
+    hash = "sha256-5CAf4GR8eqwRf2Tyq1RsFK+gGEq43QU0hoEC+gjm/Ns=";
   };
 
   cargoHash = "sha256-AXu6zBiZc2VlFYlg+fNLQ1ktgeq2MQPtYXXRxHWteCA=";
