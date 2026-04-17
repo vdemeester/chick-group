@@ -8,7 +8,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "jayrat";
-  version = "0.1.0-unstable-2026-03-31";
+  version = "0.1.0";
 
   src = fetchFromGitLab {
     owner = "chmouel";
