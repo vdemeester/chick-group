@@ -32,8 +32,8 @@ This repository provides the following packages:
 | [`nextmeeting`](https://github.com/chmouel/nextmeeting) | `3.1.1` | `aarch64-linux`, `x86_64-linux` |
 | [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`pac-metrics-watch`](https://github.com/pipelines-as-code/pac-metrics-watch) | `20260324.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.25` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.67.6` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.26` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.67.68` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`raffi`](https://github.com/chmouel/raffi) | `0.21.0` | `aarch64-linux`, `x86_64-linux` |
 | [`shotty`](https://github.com/vdemeester/shotty) | `0.2.0` | `aarch64-linux`, `x86_64-linux` |
 | [`startpaac`](https://github.com/pipelines-as-code/startpaac) | `20260416.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
