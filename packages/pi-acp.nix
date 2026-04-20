@@ -14,7 +14,7 @@ buildNpmPackage (finalAttrs: {
     hash = "sha256-37n4i+JY8I63xdXIL+BCFPohWYgugeW4ASB06y/+tjI=";
   };
 
-  npmDepsHash = "sha256-rY2oGaSZ5wjS5MuhfHdPC2h8g7bpDRJw54jweviSn1I=";
+  npmDepsHash = "sha256-7DhOBEPwhX2brxz24rqcfYw6Scw9g/yAUPXr0zo0j+A=";
 
   postPatch = ''
     cp ${./pi-acp-package-lock.json} package-lock.json
