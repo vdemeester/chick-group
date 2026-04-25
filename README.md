@@ -33,7 +33,7 @@ This repository provides the following packages:
 | [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`pac-metrics-watch`](https://github.com/pipelines-as-code/pac-metrics-watch) | `20260324.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.26` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.70.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`pi-coding-agent`](https://github.com/badlogic/pi-mono) | `0.70.2` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`raffi`](https://github.com/chmouel/raffi) | `0.21.0` | `aarch64-linux`, `x86_64-linux` |
 | [`shotty`](https://github.com/vdemeester/shotty) | `0.2.0` | `aarch64-linux`, `x86_64-linux` |
 | [`startpaac`](https://github.com/pipelines-as-code/startpaac) | `20260416.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
