@@ -6,13 +6,13 @@
 
 buildGo126Module (finalAttrs: {
   pname = "go-size-analyzer";
-  version = "1.12.5";
+  version = "1.12.6";
 
   src = fetchFromGitHub {
     owner = "Zxilly";
     repo = "go-size-analyzer";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-35ZpY42qoD5luBSFwTvL655NjIRtpD/ewDGc9o2cEoI=";
+    hash = "sha256-+lBsikXZCwx6QVEG7dKlpekfQAgHkG+9JN8E/DiS1l8=";
   };
 
   vendorHash = "sha256-ZjDe4etqi90U+7L+jYAaa0RV/D86Gz7NbLU+eSxcPnI=";
