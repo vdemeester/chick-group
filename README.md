@@ -26,7 +26,7 @@ This repository provides the following packages:
 | [`jayrah`](https://github.com/chmouel/jayrah) | `0.1.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`jayrat`](https://gitlab.com/chmouel/jayrat) | `0.1.0-unstable-2026-04-17` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`jira2markdown`](https://github.com/catcombo/jira2markdown) | `0.5` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`kss`](https://github.com/chmouel/kss) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
+| [`kss`](https://github.com/chmouel/kss) | `0.5.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`lazypr`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`lazyworktree`](https://github.com/chmouel/lazyworktree) | `1.45.1` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 | [`nextmeeting`](https://github.com/chmouel/nextmeeting) | `3.1.1` | `aarch64-linux`, `x86_64-linux` |
