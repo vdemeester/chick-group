@@ -225,6 +225,9 @@ update_with_nix_update() {
         return 0
     else
         warn "Failed to update $package with nix-update"
+        # Revert any uncommitted changes to avoid broken partial updates
+        # being swept up by the catch-all commit
+        git checkout -- "packages/${package}.nix" 2>/dev/null || true
         return 1
     fi
 }

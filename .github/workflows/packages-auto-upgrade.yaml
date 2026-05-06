@@ -35,8 +35,9 @@ jobs:
       - name: Check for changes
         id: check-changes
         run: |
-          # Commit any remaining uncommitted changes (e.g., README.md)
-          git add -A
+          # Only stage known outputs — do NOT use 'git add -A'
+          # to avoid picking up broken partial updates from failed nix-update runs
+          git add README.md repos/*.json
           if git diff --cached --quiet; then
             echo "has-changes=false" >> $GITHUB_OUTPUT
             echo "No changes detected, skipping PR creation"
@@ -44,6 +45,14 @@ jobs:
             git commit -m "chore: auto-update packages"
             echo "has-changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected, will create PR"
+          fi
+
+          # Safety check: fail if there are uncommitted or unstaged changes
+          # This catches broken partial updates that weren't properly reverted
+          if ! git diff --quiet || ! git diff --cached --quiet; then
+            echo "::error::Dirty working tree detected after update! Unstaged/uncommitted changes:"
+            git status --short
+            exit 1
           fi
       - name: Create or update pull request
         if: steps.check-changes.outputs.has-changes == 'true'
