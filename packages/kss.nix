@@ -6,7 +6,7 @@
 
 buildGoModule (finalAttrs: {
   pname = "kss";
-  version = "1.2.0";
+  version = "0.5.0";
 
   src = fetchFromGitHub {
     owner = "chmouel";
