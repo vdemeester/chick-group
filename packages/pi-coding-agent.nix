@@ -7,14 +7,14 @@
 
 buildNpmPackage (finalAttrs: {
   pname = "pi-coding-agent";
-  version = "0.73.0";
+  version = "0.73.1";
 
   src = fetchzip {
     url = "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-${finalAttrs.version}.tgz";
-    hash = "sha256-pD6AxVFnIr0i/LLM8whUp9FtyDaSwlWOCQnytA0ayQI=";
+    hash = "sha256-ZBSiOoKig+TGR7tswMro9CCmrQ5AI6Yf21XkBFastao=";
   };
 
-  npmDepsHash = "sha256-tciFNMyzmqhk9hbaXqF+KlqqA3Jtc3IjkB4CnPKL2QA=";
+  npmDepsHash = "sha256-0LJES/fgZPa3NlBBoSpjJwSPTc0EIzEuKYpp8/Q6qYM=";
 
   postPatch = ''
     cp ${./pi-coding-agent-package-lock.json} package-lock.json
