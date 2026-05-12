@@ -7,14 +7,14 @@
 
 buildNpmPackage (finalAttrs: {
   pname = "pi-coding-agent";
-  version = "0.73.1";
+  version = "0.74.0";
 
   src = fetchzip {
-    url = "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-${finalAttrs.version}.tgz";
-    hash = "sha256-ZBSiOoKig+TGR7tswMro9CCmrQ5AI6Yf21XkBFastao=";
+    url = "https://registry.npmjs.org/@earendil-works/pi-coding-agent/-/pi-coding-agent-${finalAttrs.version}.tgz";
+    hash = "sha256-I6urHVoMvZzz3I4y067gYGacIPPgYnZ/uDgw1o0A5Ks=";
   };
 
-  npmDepsHash = "sha256-nWiMRWC70/ts/PlPpP0xD3isg8D3oBOZlqH3N9bSdno=";
+  npmDepsHash = "sha256-bsGO8lgJv2cFl3PD1dhQQ7ZCil/O4KbegR12FuAhRLk=";
 
   postPatch = ''
     cp ${./pi-coding-agent-package-lock.json} package-lock.json
@@ -30,9 +30,9 @@ buildNpmPackage (finalAttrs: {
 
   meta = {
     description = "Minimal terminal coding agent that adapts to your workflows";
-    homepage = "https://github.com/badlogic/pi-mono";
-    changelog = "https://github.com/badlogic/pi-mono/releases/tag/v${finalAttrs.version}";
-    downloadPage = "https://www.npmjs.com/package/@mariozechner/pi-coding-agent";
+    homepage = "https://github.com/earendil-works/pi";
+    changelog = "https://github.com/earendil-works/pi/releases/tag/v${finalAttrs.version}";
+    downloadPage = "https://www.npmjs.com/package/@earendil-works/pi-coding-agent";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ vdemeester ];
     mainProgram = "pi";
