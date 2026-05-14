@@ -7,11 +7,11 @@
 
 buildNpmPackage (finalAttrs: {
   pname = "pi-acp";
-  version = "0.0.26";
+  version = "0.0.27";
 
   src = fetchzip {
     url = "https://registry.npmjs.org/pi-acp/-/pi-acp-${finalAttrs.version}.tgz";
-    hash = "sha256-37n4i+JY8I63xdXIL+BCFPohWYgugeW4ASB06y/+tjI=";
+    hash = "sha256-ctIV5cjgbmrxZF7wtUTZT2UxpTGnL0tKaetB73apXfA=";
   };
 
   npmDepsHash = "sha256-7DhOBEPwhX2brxz24rqcfYw6Scw9g/yAUPXr0zo0j+A=";
