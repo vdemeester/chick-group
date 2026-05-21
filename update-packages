@@ -102,6 +102,8 @@ update_npm_package() {
     info "Phase 1: Updating version and src hash..."
     if ! nix-update --flake "$package"; then
         warn "No update available for $package or nix-update failed"
+        # Revert any partial changes from nix-update
+        git checkout -- "$pkg_file" 2>/dev/null || true
         return 1
     fi
 
@@ -140,6 +142,7 @@ update_npm_package() {
         if ! curl -sL "$tarball_url" | tar -xz -C "$tmpdir"; then
             error "Failed to download package tarball"
             rm -rf "$tmpdir"
+            git checkout -- "$pkg_file" 2>/dev/null || true
             return 1
         fi
     fi
@@ -150,6 +153,7 @@ update_npm_package() {
     if [ ! -f "$pkg_dir/package.json" ]; then
         error "package.json not found in extracted tarball"
         rm -rf "$tmpdir"
+        git checkout -- "$pkg_file" 2>/dev/null || true
         return 1
     fi
 
@@ -158,12 +162,14 @@ update_npm_package() {
     (cd "$pkg_dir" && npm install --package-lock-only --ignore-scripts) || {
         error "Failed to generate package-lock.json"
         rm -rf "$tmpdir"
+        git checkout -- "$pkg_file" 2>/dev/null || true
         return 1
     }
 
     if [ ! -f "$pkg_dir/package-lock.json" ]; then
         error "package-lock.json was not generated"
         rm -rf "$tmpdir"
+        git checkout -- "$pkg_file" 2>/dev/null || true
         return 1
     fi
 
@@ -182,10 +188,16 @@ update_npm_package() {
     # Calculate the new npmDepsHash
     info "Calculating new npmDepsHash..."
     local new_hash
-    new_hash=$(prefetch-npm-deps "packages/$lockfile_name")
-    if [ -z "$new_hash" ]; then
-        error "Failed to calculate npmDepsHash"
+    new_hash=$(prefetch-npm-deps "packages/$lockfile_name" 2>&1) || {
+        error "Failed to calculate npmDepsHash: $new_hash"
         rm -rf "$tmpdir"
+        git checkout -- "$pkg_file" "packages/$lockfile_name" 2>/dev/null || true
+        return 1
+    }
+    if [ -z "$new_hash" ]; then
+        error "Failed to calculate npmDepsHash (empty result)"
+        rm -rf "$tmpdir"
+        git checkout -- "$pkg_file" "packages/$lockfile_name" 2>/dev/null || true
         return 1
     fi
     info "New npmDepsHash: $new_hash"
