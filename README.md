@@ -13,31 +13,6 @@ This repository provides the following packages:
 
 | Package | Version | Platforms |
 |---|---|---|
-| [`abs-tui`](https://github.com/vdemeester/abs-tui) | `0.1.0` | `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`batzconverter`](https://github.com/chmouel/batzconverter) | `2.9.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`bluetooth-monitor`](https://github.com/freedreamer82/bluetooth-monitor) | `unstable-2018-06-08` | `aarch64-linux`, `x86_64-linux` |
-| [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-linux`, `x86_64-linux` |
-| [`deptree`](https://github.com/vc60er/deptree) | `20251114.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`gh-news`](https://github.com/chmouel/gh-news) | `0.17.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`gh-pr`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`gitmal`](https://github.com/antonmedv/gitmal) | `1.0.2` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`go-better-html-coverage`](https://github.com/chmouel/go-better-html-coverage) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`go-size-analyzer`](https://github.com/Zxilly/go-size-analyzer) | `1.13.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`jayrah`](https://github.com/chmouel/jayrah) | `0.1.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`jayrat`](https://gitlab.com/chmouel/jayrat) | `0.1.0-unstable-2026-04-17` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`jira2markdown`](https://github.com/catcombo/jira2markdown) | `0.5` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`kss`](https://github.com/chmouel/kss) | `1.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`kunai`](https://github.com/mikkurogue/kunai) | `0.1.0-unstable-2025-06-07` | `aarch64-linux`, `x86_64-linux` |
-| [`lazypr`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`lazyworktree`](https://github.com/chmouel/lazyworktree) | `1.48.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`nextmeeting`](https://github.com/chmouel/nextmeeting) | `3.1.1` | `aarch64-linux`, `x86_64-linux` |
-| [`nixpkgs-pr-watch`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`pac-metrics-watch`](https://github.com/pipelines-as-code/pac-metrics-watch) | `20260324.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.27` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`raffi`](https://github.com/chmouel/raffi) | `0.21.0` | `aarch64-linux`, `x86_64-linux` |
-| [`shotty`](https://github.com/vdemeester/shotty) | `0.2.0` | `aarch64-linux`, `x86_64-linux` |
-| [`startpaac`](https://github.com/pipelines-as-code/startpaac) | `20260709.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
-| [`tekton-lsp`](https://github.com/vdemeester/tekton-lsp-go) | `0.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-darwin`, `x86_64-linux` |
 
 <!-- END PACKAGE TABLE -->
 
