@@ -8,16 +8,16 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "gh-news";
-  version = "0.17.0";
+  version = "0.18.0";
 
   src = fetchFromGitHub {
     owner = "chmouel";
     repo = "gh-news";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-ztHvgS4O1f+mDq/WMKz+ojH44/7SYTGhF84f3DsRywU=";
+    hash = "sha256-FzOcusIiwo2FNxfeXjj1rY13jXZq9j3snI2NYmUQxaI=";
   };
 
-  cargoHash = "sha256-NzymyDf5bJBhmmuELulFrazyhFwAeD8VX1OORjWAIKw=";
+  cargoHash = "sha256-rCIpKXfwin0p1zT+N3ZfPdNhzPIa2112rEJs7pZc4XE=";
 
   nativeBuildInputs = [
     pkg-config
