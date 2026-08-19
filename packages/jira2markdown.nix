@@ -2,7 +2,7 @@
 
 python3.pkgs.buildPythonPackage (finalAttrs: {
   pname = "jira2markdown";
-  version = "0.5";
+  version = "0.5.1";
 
   pyproject = true;
 
@@ -10,7 +10,7 @@ python3.pkgs.buildPythonPackage (finalAttrs: {
 
   src = fetchPypi {
     inherit (finalAttrs) pname version;
-    hash = "sha256-OWaQllgzI05vcAHowt05NM3ulj/+iohc+zy+MJEh6BA=";
+    hash = "sha256-4j8a5TaO+TOZ3oLKddSDfr77saS/Fa8VP2Wc7Z7l/Nc=";
   };
 
   nativeBuildInputs = [
