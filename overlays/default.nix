@@ -9,9 +9,7 @@ _self: super: {
   gitmal = super.callPackage ../packages/gitmal.nix { };
   go-better-html-coverage = super.callPackage ../packages/go-better-html-coverage.nix { };
   go-size-analyzer = super.callPackage ../packages/go-size-analyzer.nix { };
-  jayrah = super.callPackage ../packages/jayrah.nix { };
   jayrat = super.callPackage ../packages/jayrat.nix { };
-  jira2markdown = super.callPackage ../packages/jira2markdown.nix { };
   kss = super.callPackage ../packages/kss.nix { };
   kunai = super.callPackage ../packages/kunai.nix { };
   lazypr = super.callPackage ../packages/lazypr.nix { };
