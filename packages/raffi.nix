@@ -48,6 +48,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
     "--skip=tests::test_config_without_general_section"
     "--skip=tests::test_general_config_parsing"
     "--skip=tests::test_partial_general_config"
+
+    # These upstream tests rely on shell PATH/function behavior that fails in
+    # the Nix sandbox; keep the rest of the release test suite enabled.
+    "--skip=tests::test_print_only_binary_shadowing_builtin_runs_external_program"
+    "--skip=tests::test_print_only_binary_shadowing_shell_specific_builtin_runs_external_program"
+    "--skip=tests::test_print_only_binary_shadowed_by_shell_function_runs_external_program"
+    "--skip=tests::test_print_only_script_interpreter_shadowing_builtin_runs_external_program"
   ];
 
   postFixup = ''
