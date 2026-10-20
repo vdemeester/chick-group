@@ -48,24 +48,21 @@
             text = ''
               # Generate current package table using nix eval
               generate_table() {
-                echo "| Package | Version | Description |"
-                echo "|---------|---------|-------------|"
+                echo "| Package | Version | Platforms |"
+                echo "|---|---|---|"
 
-                nix flake show --json 2>/dev/null | \
-                  jq -r '.packages."x86_64-linux" | keys[]' | \
+                nix eval --json '.#packages.x86_64-linux' --apply builtins.attrNames 2>/dev/null | \
+                  jq -r '.[]' | \
                   sort | \
                   while read -r pkg; do
                     version=$(nix eval ".#''${pkg}.version" --raw 2>/dev/null || echo "unknown")
-                    description=$(nix eval ".#''${pkg}.meta.description" --raw 2>/dev/null || echo "")
                     homepage=$(nix eval ".#''${pkg}.meta.homepage" --raw 2>/dev/null || echo "")
-
                     if [ -n "$homepage" ]; then
-                      pkg_link="[''${pkg}](''${homepage})"
+                      pkg_link="[\`''${pkg}\`](''${homepage})"
                     else
-                      pkg_link="''${pkg}"
+                      pkg_link="\`''${pkg}\`"
                     fi
-
-                    echo "| ''${pkg_link} | ''${version} | ''${description} |"
+                    echo "| ''${pkg_link} | \`''${version}\` | \`x86_64-linux\` |"
                   done
               }
 
@@ -113,7 +110,7 @@
               src = ./.;
               hooks = {
                 deadnix.enable = true;
-                nixfmt-rfc-style.enable = true;
+                nixfmt.enable = true;
                 # nix-linter.enable = true;
                 # statix.enable = true;
 

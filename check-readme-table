@@ -1,55 +1,21 @@
-# Check if README.md package table is up to date
-# Used as a pre-commit hook to ensure documentation stays current
+#!/usr/bin/env bash
+# Check whether README.md contains the generated package table.
+set -euo pipefail
 
-# Generate current package table
-generate_table() {
-  echo "| Package | Version | Description |"
-  echo "|---------|---------|-------------|"
-
-  nix flake show --json 2>/dev/null | \
-    jq -r '.packages."x86_64-linux" | keys[]' | \
-    sort | \
-    while read -r pkg; do
-      version=$(nix eval ".#${pkg}.version" --raw 2>/dev/null || echo "unknown")
-      description=$(nix eval ".#${pkg}.meta.description" --raw 2>/dev/null || echo "")
-      homepage=$(nix eval ".#${pkg}.meta.homepage" --raw 2>/dev/null || echo "")
-
-      if [ -n "$homepage" ]; then
-        pkg_link="[${pkg}](${homepage})"
-      else
-        pkg_link="${pkg}"
-      fi
-
-      echo "| ${pkg_link} | ${version} | ${description} |"
-    done
-}
-
-# Extract table from README between markers
-extract_readme_table() {
-  awk '/<!-- BEGIN PACKAGE TABLE -->/,/<!-- END PACKAGE TABLE -->/' README.md | \
-    grep -v "<!-- BEGIN PACKAGE TABLE -->" | \
-    grep -v "<!-- END PACKAGE TABLE -->" | \
-    sed '/^$/d'
-}
-
-# Check if README exists
-if [ ! -f "README.md" ]; then
+if [ ! -f README.md ]; then
   echo "Error: README.md not found" >&2
   exit 1
 fi
 
-# Generate current table and extract README table
-CURRENT_TABLE=$(generate_table)
-README_TABLE=$(extract_readme_table)
+tmpdir=$(mktemp -d)
+trap 'rm -rf "$tmpdir"' EXIT
+cp README.md "$tmpdir/README.md"
 
-# Compare tables
-if [ "$CURRENT_TABLE" != "$README_TABLE" ]; then
+README="$tmpdir/README.md" ./generate-package-table >/dev/null
+if ! diff -u README.md "$tmpdir/README.md"; then
   echo "Error: README.md package table is out of date!" >&2
-  echo "" >&2
   echo "Please run './generate-package-table' to update it." >&2
-  echo "" >&2
   exit 1
 fi
 
 echo "✓ README.md package table is up to date"
-exit 0

@@ -13,7 +13,7 @@
 
 set -euo pipefail
 
-README="README.md"
+README="${README:-README.md}"
 TEMP_FILE=$(mktemp)
 
 # All systems defined in the flake
@@ -32,8 +32,8 @@ generate_table() {
 
   for system in "${SYSTEMS[@]}"; do
     # Get all package names for this system
-    packages=$(nix flake show --json 2>/dev/null | \
-      jq -r ".packages.\"${system}\" | keys[]? // empty" 2>/dev/null || true)
+    packages=$(nix eval --json ".#packages.${system}" --apply builtins.attrNames 2>/dev/null | \
+      jq -r '.[]' 2>/dev/null || true)
 
     while IFS= read -r pkg; do
       [ -z "$pkg" ] && continue
