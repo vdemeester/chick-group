@@ -22,4 +22,5 @@ _self: super: {
   shotty = super.callPackage ../packages/shotty.nix { };
   startpaac = super.callPackage ../packages/startpaac.nix { };
   tekton-lsp = super.callPackage ../packages/tekton-lsp.nix { };
+  tequilashot = super.callPackage ../packages/tequilashot.nix { };
 }
