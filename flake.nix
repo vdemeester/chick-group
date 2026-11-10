@@ -11,6 +11,9 @@
       flake = {
         githubActions = inputs.nix-github-actions.lib.mkGithubMatrix {
           checks = nixpkgs.lib.getAttrs [ "x86_64-linux" "aarch64-darwin" ] self.packages;
+          platforms = inputs.nix-github-actions.lib.githubPlatforms // {
+            "aarch64-darwin" = "macos-26";
+          };
         };
         overlays = {
           default = final: prev: import ./overlays final prev;
