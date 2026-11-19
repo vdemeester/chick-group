@@ -34,7 +34,7 @@ This repository provides the following packages:
 | [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.27` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`raffi`](https://github.com/chmouel/raffi) | `0.26.0` | `aarch64-linux`, `x86_64-linux` |
 | [`shotty`](https://github.com/vdemeester/shotty) | `0.2.0` | `aarch64-linux`, `x86_64-linux` |
-| [`startpaac`](https://github.com/pipelines-as-code/startpaac) | `20260923.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
+| [`startpaac`](https://github.com/pipelines-as-code/startpaac) | `20261118.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`tekton-lsp`](https://github.com/vdemeester/tekton-lsp-go) | `0.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`tequilashot`](https://github.com/chmouel/tequilashot) | `0.5.0` | `aarch64-linux`, `x86_64-linux` |
 
