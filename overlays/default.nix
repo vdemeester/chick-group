@@ -1,5 +1,6 @@
 _self: super: {
   abs-tui = super.callPackage ../packages/abs-tui.nix { };
+  aniflow = super.callPackage ../packages/aniflow.nix { };
   batzconverter = super.callPackage ../packages/batzconverter.nix { };
   bluetooth-monitor = super.callPackage ../packages/bluetooth-monitor.nix { };
   cliphist-cleanup = super.callPackage ../packages/cliphist-cleanup.nix { };
