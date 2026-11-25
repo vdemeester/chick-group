@@ -14,7 +14,7 @@ This repository provides the following packages:
 | Package | Version | Platforms |
 |---|---|---|
 | [`abs-tui`](https://github.com/vdemeester/abs-tui) | `0.1.0` | `aarch64-linux`, `x86_64-linux` |
-| [`aniflow`](https://github.com/chmouel/aniflow) | `20261123.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
+| [`aniflow`](https://github.com/chmouel/aniflow) | `20261124.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`batzconverter`](https://github.com/chmouel/batzconverter) | `3.1.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`bluetooth-monitor`](https://github.com/freedreamer82/bluetooth-monitor) | `unstable-2018-06-08` | `aarch64-linux`, `x86_64-linux` |
 | [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-linux`, `x86_64-linux` |
@@ -35,7 +35,7 @@ This repository provides the following packages:
 | [`pi-acp`](https://github.com/svkozak/pi-acp) | `0.0.27` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`raffi`](https://github.com/chmouel/raffi) | `0.26.0` | `aarch64-linux`, `x86_64-linux` |
 | [`shotty`](https://github.com/vdemeester/shotty) | `0.2.0` | `aarch64-linux`, `x86_64-linux` |
-| [`startpaac`](https://github.com/pipelines-as-code/startpaac) | `20261123.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
+| [`startpaac`](https://github.com/pipelines-as-code/startpaac) | `20261124.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`tekton-lsp`](https://github.com/vdemeester/tekton-lsp-go) | `0.2.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`tequilashot`](https://github.com/chmouel/tequilashot) | `0.5.0` | `aarch64-linux`, `x86_64-linux` |
 
