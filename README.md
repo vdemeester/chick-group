@@ -14,7 +14,7 @@ This repository provides the following packages:
 | Package | Version | Platforms |
 |---|---|---|
 | [`abs-tui`](https://github.com/vdemeester/abs-tui) | `0.1.0` | `aarch64-linux`, `x86_64-linux` |
-| [`aniflow`](https://github.com/chmouel/aniflow) | `20261124.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
+| [`aniflow`](https://github.com/chmouel/aniflow) | `20261125.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`batzconverter`](https://github.com/chmouel/batzconverter) | `3.1.0` | `aarch64-darwin`, `aarch64-linux`, `x86_64-linux` |
 | [`bluetooth-monitor`](https://github.com/freedreamer82/bluetooth-monitor) | `unstable-2018-06-08` | `aarch64-linux`, `x86_64-linux` |
 | [`cliphist-cleanup`](https://github.com/vdemeester/x) | `20260304.0` | `aarch64-linux`, `x86_64-linux` |
